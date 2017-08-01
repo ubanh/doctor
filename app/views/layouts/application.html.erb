@@ -13,11 +13,11 @@
   <p id="notice"><%= notice %></p>
   <p id="alert"><%= alert %></p>
 
-  <% if flash[:notice] %>
-    <div id="notice">
-      <%= flash[:notice] %>
-    </div>
+  <% if user_signed_in? %>
+     <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
   <% end %>
-    <%= yield %>
+
+  <%= yield %>
+
   </body>
 </html>

@@ -1,12 +1,13 @@
 class PatientsController < ApplicationController
-  before_action :get_patient, only [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :get_patient, only: [:show, :edit, :update, :destroy]
 
   def get_patient
-    @patient = Patient.find(params[:id])
+    @patient = Patient.find_by(id: params[:id], user_id: current_user.id)
   end
 
   def index
-    @patients = Patient.all
+    @patients = current_user.patients
   end
 
   def show
@@ -17,7 +18,7 @@ class PatientsController < ApplicationController
   end
 
   def create
-    @patient = Patient.new(patient_params)
+    @patient = current_user.patients.build(patient_params)
 
     if @patient.save
       redirect_to @patient
