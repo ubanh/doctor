@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
+//= require metismenu
 //= require raphael
 //= require morris
-//= require metismenu
 //= require rails-ujs
 //= require js/sb-admin-2.js
 //= require_tree .
