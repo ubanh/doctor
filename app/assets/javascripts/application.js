@@ -10,6 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery_ujs
+//= require raphael
+//= require morris
+//= require metismenu
 //= require rails-ujs
-//= require turbolinks
+//= require js/sb-admin-2.js
 //= require_tree .
