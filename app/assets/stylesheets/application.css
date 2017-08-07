@@ -10,6 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require base
+ *= require metismenu
+ *= require css/sb-admin-2.min
+ *= require css/landing-page
  *= require_tree .
  *= require_self
  */
