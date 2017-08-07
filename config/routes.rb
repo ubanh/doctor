@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :medics
   get 'doctor/index'
 
   get 'doctor/show'
