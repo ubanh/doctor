@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions'}
 
   resources :patients
+
+  get 'user_root' => 'patients#index'
 
   root to: 'welcome#index'
 

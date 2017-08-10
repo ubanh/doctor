@@ -31,6 +31,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'metismenu-rails', github: 'lanvige/metismenu-rails'
 gem 'font-awesome-rails'
+gem 'jquery-datatables-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
