@@ -26,3 +26,4 @@ es:
   back: "Atrás"
   last_name: "Apellido"
   first_name: "Nombre"
+  patient_details: "Detalles del paciente"
