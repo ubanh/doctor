@@ -13,6 +13,25 @@
   <ul class="nav navbar-top-links navbar-right">
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-language fa-fw"></i> <i class="fa fa-caret-down"></i>
+      </a>
+      <ul class="dropdown-menu dropdown-user">
+        <li>
+          <%= link_to locale: :en do %>
+              <i class="fa fa-fw"></i><%= t(:english) %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to locale: :es do %>
+          <i class="fa fa-fw"></i><%= t(:spanish) %>
+          <% end %>
+        </li>
+      </ul>
+      <!-- /.dropdown-user -->
+    </li>
+    <!-- /.dropdown -->
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
       </a>
       <ul class="dropdown-menu dropdown-user">
@@ -25,7 +44,7 @@
         </li>
         <li class="divider"></li>
         <li>
-          <%= link_to destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"} do %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
               <i class="fa fa-sign-out fa-fw"></i> Logout
           <% end %>
         </li>
@@ -51,7 +70,7 @@
           <!-- /input-group -->
         </li>
         <li>
-          <%= link_to user_root_path(current_user) do %>
+          <%= link_to user_root_path do %>
               <i class="fa fa-dashboard fa-fw"></i> Dashboard
           <% end %>
         </li>
@@ -61,12 +80,10 @@
           <% end %>
         </li>
         <li>
-          <a href="#"><i class="fa fa-wrench fa-fw"></i> You Profile<span class="fa arrow"></span></a>
+          <a href="#"><i class="fa fa-wrench fa-fw"></i> Your Profile<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
             <li>
-              <%= link_to edit_user_registration_path do %>
-                   Edit
-              <% end %>
+              <%= link_to " Edit", edit_user_registration_path %>
             </li>
           </ul>
           <!-- /.nav-second-level -->

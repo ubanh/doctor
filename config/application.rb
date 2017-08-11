@@ -11,6 +11,10 @@ module Doctor
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
+    # Setup internationalization
+    I18n.available_locales = [:en, :es]
+    I18n.default_locale = :es
+
     # Added global variables for the project
     config.app_name = 'Doctor'
 
