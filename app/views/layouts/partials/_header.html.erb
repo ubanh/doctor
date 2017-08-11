@@ -37,15 +37,15 @@
       <ul class="dropdown-menu dropdown-user">
         <li>
           <%= link_to edit_user_registration_path do %>
-              <i class="fa fa-user fa-fw"></i> User Profile
+              <i class="fa fa-user fa-fw"></i> <%= t :user_profile %>
           <% end %>
         </li>
-        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+        <li><a href="#"><i class="fa fa-gear fa-fw"></i> <%= t(:settings) %></a>
         </li>
         <li class="divider"></li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-sign-out fa-fw"></i> Logout
+              <i class="fa fa-sign-out fa-fw"></i> <%= t(:logout) %>
           <% end %>
         </li>
       </ul>
@@ -71,19 +71,19 @@
         </li>
         <li>
           <%= link_to user_root_path do %>
-              <i class="fa fa-dashboard fa-fw"></i> Dashboard
+              <i class="fa fa-dashboard fa-fw"></i> <%= t(:dashboard) %>
           <% end %>
         </li>
         <li>
           <%= link_to patients_path do %>
-              <i class="fa fa-table fa-fw"></i> Your Patients
+              <i class="fa fa-table fa-fw"></i> <%= t(:your_patients) %>
           <% end %>
         </li>
         <li>
-          <a href="#"><i class="fa fa-wrench fa-fw"></i> Your Profile<span class="fa arrow"></span></a>
+          <a href="#"><i class="fa fa-wrench fa-fw"></i> <%= t(:your_profile) %><span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
             <li>
-              <%= link_to " Edit", edit_user_registration_path %>
+              <%= link_to t(:edit), edit_user_registration_path %>
             </li>
           </ul>
           <!-- /.nav-second-level -->

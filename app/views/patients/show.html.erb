@@ -1,18 +1,18 @@
 <% title "Patient Details" %>
 <p>
-  <strong>First Name:</strong>
+  <strong><%= t(:first_name) %>:</strong>
   <%= @patient.first_name %>
 </p>
 
 <p>
-  <strong>Last Name:</strong>
+  <strong><%= t(:last_name) %>:</strong>
   <%= @patient.last_name %>
 </p>
 
 <p>
-  <strong>Phone Number:</strong>
+  <strong><%= t(:phone_number) %>:</strong>
   <%= @patient.phone_number %>
 </p>
 
-<p><%= link_to 'Edit', edit_patient_path(@patient), class: "btn btn-primary" %></p>
-<%= link_to 'Back', patients_path, class: "btn btn-default" %>
+<p><%= link_to t(:edit), edit_patient_path(@patient), class: "btn btn-primary" %></p>
+<%= link_to t(:back), patients_path, class: "btn btn-default" %>
