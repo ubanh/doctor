@@ -1,23 +1,33 @@
-<h1>Your Patients</h1>
-<%= link_to 'Add Patient', new_patient_path %>
+<% title t(:your_patients) %>
 
-<table>
-  <thead>
-  <tr>
-    <th>Patient</th>
-    <th>Phone Number</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @patients.each do |patient| %>
+<div class="row">
+  <div class="col-lg-12">
+    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+      <thead>
       <tr>
-        <td><%= patient.full_name %></td>
-        <td><%= patient.phone_number %></td>
-        <td><%= link_to 'Show', patient_path(patient) %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-        <td><%= link_to 'Delete', patient_path(patient), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <th><%= t(:patient) %></th>
+        <th><%= t(:phone_number) %></th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-  <% end %>
-  </tbody>
-</table>
+      </thead>
+      <tbody>
+      <% @patients.each do |patient| %>
+          <tr>
+            <td><%= patient.full_name %></td>
+            <td><%= patient.phone_number %></td>
+            <td><%= link_to t(:show), patient_path(patient) %></td>
+            <td><%= link_to t(:edit), edit_patient_path(patient) %></td>
+            <td><%= link_to t(:delete), patient_path(patient), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <!-- /.table-responsive -->
+    <div class="text-center">
+      <%= link_to t(:add_patient), new_patient_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <!-- /.col-lg-12 -->
+</div>

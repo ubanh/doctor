@@ -9,10 +9,11 @@
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>s
   <![endif]-->
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'css/landing-page' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
@@ -30,28 +31,35 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to Rails.application.config.app_name, "#", class: "navbar-brand topnav" %>
+      <p class="navbar-text"><%= t(:language) %>:
+        <% if I18n.locale == :en %>
+            <%= link_to " Spanish", {locale: :es} %>
+        <% else %>
+            <%= link_to " Ingles", {locale: :en} %>
+        <% end %>
+      </p>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= link_to new_user_session_path, class: "btn btn-outline btn-default btn-lg" do %>
-              <i class="fa fa-sign-in fa-fw"></i> <span class="network-name">Log In</span>
+          <a href="#about"><%= t(:about) %></a>
+        </li>
+        <li>
+          <a href="#services"><%= t(:services) %></a>
+        </li>
+        <li>
+          <a href="#contact"><%= t(:contact) %></a>
+        </li>
+        <li>
+          <%= link_to new_user_session_path, class: "btn btn-default" do %>
+              <i class="fa fa-sign-in fa-fw"></i> <span class="network-name"><%= t(:login) %></span>
           <% end %>
         </li>
         <li>
-          <%= link_to new_user_registration_path, class: "btn btn-default btn-lg" do %>
-              <i class="fa fa-user-plus fa-fw"></i> <span class="network-name">Sign Up</span>
+          <%= link_to new_user_registration_path, class: "btn btn-default" do %>
+              <i class="fa fa-user-plus fa-fw"></i> <span class="network-name"><%= t(:sign_up) %></span>
           <% end %>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#services">Services</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
         </li>
       </ul>
     </div>
@@ -70,17 +78,17 @@
       <div class="col-lg-12">
         <div class="intro-message">
           <h1><%= Rails.application.config.app_name %></h1>
-          <h3>The best patient management website</h3>
+          <h3><%= t(:welcome_intro) %></h3>
           <hr class="intro-divider">
           <ul class="list-inline intro-social-buttons">
             <li>
               <%= link_to new_user_session_path, class: "btn btn-outline btn-default btn-lg" do %>
-                <i class="fa fa-sign-in fa-fw"></i> <span class="network-name">Log In</span>
+                  <i class="fa fa-sign-in fa-fw"></i> <span class="network-name"><%= t(:login) %></span>
               <% end %>
             </li>
             <li>
               <%= link_to new_user_registration_path, class: "btn btn-default btn-lg" do %>
-                <i class="fa fa-user-plus fa-fw"></i> <span class="network-name">Sign Up</span>
+                  <i class="fa fa-user-plus fa-fw"></i> <span class="network-name"><%= t(:sign_up) %></span>
               <% end %>
             </li>
           </ul>
@@ -96,7 +104,7 @@
 
 <!-- Page Content -->
 
-<a  name="services"></a>
+<a name="services"></a>
 <div class="content-section-a">
 
   <div class="container">
@@ -105,7 +113,9 @@
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
         <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-        <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+        <p class="lead">A special thanks to
+          <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the
+          photographs that you see in this template. Visit their website to become a member.</p>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
         <img class="img-responsive" src="/img/ipad.png" alt="">
@@ -127,7 +137,9 @@
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
         <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-        <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+        <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions
+          by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of
+          their awesome, free photoshop actions!</p>
       </div>
       <div class="col-lg-5 col-sm-pull-6  col-sm-6">
         <img class="img-responsive" src="/img/dog.png" alt="">
@@ -149,7 +161,9 @@
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
         <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-        <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+        <p class="lead">This template features the 'Lato' font, part of the
+          <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as
+          <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
         <img class="img-responsive" src="/img/phones.png" alt="">
@@ -162,7 +176,7 @@
 </div>
 <!-- /.content-section-a -->
 
-<a  name="contact"></a>
+<a name="contact"></a>
 <div class="banner">
 
   <div class="container">
@@ -174,13 +188,16 @@
       <div class="col-lg-6">
         <ul class="list-inline banner-social-buttons">
           <li>
-            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i>
+              <span class="network-name">Twitter</span></a>
           </li>
           <li>
-            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i>
+              <span class="network-name">Github</span></a>
           </li>
           <li>
-            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i>
+              <span class="network-name">Linkedin</span></a>
           </li>
         </ul>
       </div>

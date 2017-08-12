@@ -12,10 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/extras/dataTables.responsive
 //= require bootstrap-sprockets
 //= require metismenu
+//= require jquery.mask
 //= require raphael
 //= require morris
 //= require rails-ujs
 //= require js/sb-admin-2.js
+//= require custom
 //= require_tree .
